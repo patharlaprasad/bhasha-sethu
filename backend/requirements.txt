@@ -1,8 +1,9 @@
+setuptools>=67.0.0
+wheel>=0.40.0
 Flask==3.0.0
 Flask-Cors==4.0.1
-transformers==4.44.2
+torch==2.8.0
+transformers==4.40.0
 sentencepiece==0.1.99
 faiss-cpu==1.7.4
-torch==2.8.0   # Update to available version
 gunicorn==20.1.0
-numpy==1.25.0
