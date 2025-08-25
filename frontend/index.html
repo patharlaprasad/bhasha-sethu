@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhasha Sethu - The Language Bridge</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased text-slate-800">
+  <div class="min-h-screen flex flex-col items-center justify-center p-4 lg:p-8">
+    <!-- Heading -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">Bhasha Sethu</span>
+      </h1>
+      <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">🌍 An AI-powered bridge connecting <span class="font-semibold text-indigo-600">English</span>, <span class="font-semibold text-amber-600">हिंदी</span> & <span class="font-semibold text-pink-600">తెలుగు</span>.</p>
+    </div>
+
+    <!-- Layout -->
+    <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Left: Input & Results -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Input Card -->
+        <div class="main-card" id="tilt-card">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Input Text -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-2">1. Enter Text</label>
+              <div class="relative">
+                <textarea id="text-input" class="input-box w-full p-3 pr-20 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300" placeholder="Type Hinglish / Tinglish / हिंदी / తెలుగు / English..."></textarea>
+                <div class="absolute right-3 top-3 flex items-center space-x-2">
+                  <button id="clear-btn" class="icon-btn hidden" title="Clear">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  </button>
+                  <button id="mic-btn" class="icon-btn" title="🎤 Speak">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Target Language -->
+            <div id="target-language-wrapper">
+              <label class="block text-sm font-semibold text-slate-700 mb-2">2. Select Target Language</label>
+              <select id="target-language-select" class="input-box w-full p-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                <option value="" disabled selected>Choose language...</option>
+                <option value="en">🌐 English</option>
+                <option value="hi">🇮🇳 Hindi (हिंदी)</option>
+                <option value="te">🇮🇳 Telugu (తెలుగు)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Process Button -->
+          <div class="mt-6 text-center">
+            <button id="process-btn" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg relative overflow-hidden">
+              <span class="relative z-10">🚀 Process Full Pipeline</span>
+              <span class="shine-effect"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results-container" class="space-y-6"></div>
+      </div>
+
+      <!-- Right: Metrics -->
+      <div class="main-card h-fit">
+        <h2 class="text-xl font-bold text-slate-800 mb-4 border-b pb-3">📊 Live Metrics</h2>
+        <div id="metrics-container" class="space-y-4">
+          <p class="text-slate-500">⚡ Metrics will appear here after processing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
